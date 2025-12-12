@@ -1,0 +1,31 @@
+⭐ Simple Summary of Your CI/CD Pipeline
+
+1️⃣ Build the project
+
+Compile the Java code using Maven and create a JAR file.
+
+2️⃣ Run security checks
+
+Scan your project for vulnerabilities (Trivy).
+
+Check if any secrets are accidentally pushed (Gitleaks).
+
+3️⃣ Run tests
+
+Execute all unit tests to make sure the code works.
+
+4️⃣ Check code quality (SonarQube)
+
+Analyze the code for bugs, bad practices, and vulnerabilities.
+
+Stop the pipeline if quality does not meet standards.
+
+5️⃣ Build and push Docker image
+
+Take the JAR file, create a Docker image, and push it to Docker Hub.
+
+6️⃣ Deploy to Kubernetes (EKS)
+
+Use AWS credentials and kubeconfig to connect to the cluster.
+
+Apply the Kubernetes YAML file to deploy the latest version.
