@@ -67,3 +67,20 @@ jobs:
           path: |
             trivy-fs-report.json
             gitleaks-report.json
+  test:
+    runs-on: Agent-1
+    needs: security
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Testing
+        run: mvn test
