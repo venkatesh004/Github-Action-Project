@@ -51,13 +51,13 @@ jobs:
 
       - name: Trivy filesystem scan
         run: |
-         trivy fs . --exit-code 0
+         trivy fs . --exit-code 0\
+         trivy-fs-report.json
+
          
 
       - name: Install Gitleaks
-        run: sudo apt install -y gitleaks\
-             trivy-fs-report.json
-
+        run: sudo apt install -y gitleaks
 
       - name: Run Gitleaks
         run: gitleaks detect \
