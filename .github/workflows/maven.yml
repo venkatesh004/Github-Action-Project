@@ -52,5 +52,4 @@ jobs:
       - name: Trivy filesystem scan
         run: |
           trivy fs . \
-            --severity CRITICAL \
             --exit-code 1
