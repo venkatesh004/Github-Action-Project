@@ -52,3 +52,11 @@ jobs:
       - name: Trivy filesystem scan
         run: |
          trivy fs . --exit-code 0
+
+      - name: Install Gitleaks
+        run: sudo apt install -y gitleaks
+
+      - name: Run Gitleaks
+        run: gitleaks detect --no-git
+
+
